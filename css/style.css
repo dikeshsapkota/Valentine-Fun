@@ -1,0 +1,86 @@
+/* ===== BODY ===== */
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: url("../images/bg2.png");
+  background-size: contain;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  font-family: 'Poppins', sans-serif;
+overflow: hidden;
+}
+
+/* ===== HEADING ===== */
+h1 {
+  color: aliceblue;
+  font-size: 75px;
+  text-align: center;
+  margin: 0 0 50px 0;  /* space below heading */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* subtle glow */
+}
+
+/* ===== BUTTONS CONTAINER ===== */
+.buttons {
+  position: relative;
+  display: flex;        
+  align-items: center;         /* vertical alignment */
+  gap: 20px;                   /* space between buttons */
+  margin-top: 30px;
+}
+
+/* ===== YES BUTTON ===== */
+#yes {
+  background: linear-gradient(135deg, #ff4b5c, #ff1e56);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 30, 86, 0.5);
+  transition: all 0.3s ease;
+}
+
+#yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(255, 30, 86, 0.7);
+}
+
+/* ===== NO BUTTON ===== */
+#no {
+  position: relative;  /* starts next to YES */
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  opacity: 0.7;
+ 
+  transition: left 0.3s ease, top 0.3s ease, opacity 0.2s ease;
+}
+
+
+
+#no:hover {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  #yes, #no {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
