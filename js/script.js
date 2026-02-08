@@ -20,6 +20,8 @@ noBtn.addEventListener("touchstart", moveNoButton);
 yesBtn.addEventListener("click", () => {
    const music=document.getElementById("loveMusic");
   music.play();
+  startHeartRain();
+
   
   document.querySelector("h1").style.display = "none";
   document.querySelector(".buttons").style.display = "none";
@@ -41,3 +43,20 @@ yesBtn.addEventListener("click", () => {
 
   document.body.appendChild(message);
 });
+//HEART RAIN
+    const baseHeart=document.querySelector(".heart");
+function startHeartRain() {
+  const interval = setInterval(() => {
+    const heart = baseHeart.cloneNode(true);
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+    heart.style.fontSize = 16 + Math.random() * 30 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }, 200);
+
+  setTimeout(() => clearInterval(interval), 8000);
+}

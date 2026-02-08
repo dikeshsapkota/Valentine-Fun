@@ -87,3 +87,22 @@ h1 {
     font-size: 1rem;
   }
 }
+/* ===== ANIMATION FOR HEART RAIN ===== */
+.heart {
+  position: fixed;
+  top: -40px;
+  font-size: 24px;
+  animation: fall linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
