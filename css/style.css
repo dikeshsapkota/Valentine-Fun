@@ -75,18 +75,52 @@ h1 {
   opacity: 1;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
+  /* Heading: scales perfectly, centered, elegant spacing */
   h1 {
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 8vw;               /* scales with viewport width */
+    line-height: 1.2;             /* tighter and elegant */
+    margin-bottom: 25px;
+    text-align: center;
+    color: #ffe6f0;               /* soft Valentine color */
+    text-shadow: 2px 2px 12px rgba(255, 0, 128, 0.5); /* subtle glow */
   }
 
+  /* Buttons container: vertical stack for easy tapping */
+  .buttons {
+    flex-direction: column;       /* stack buttons */
+    gap: 18px;                    /* comfortable touch spacing */
+    width: 90%;                   /* almost full width */
+    max-width: 320px;             /* prevent over-stretching on tablets */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  /* YES & NO buttons: full-width, touch-friendly, with subtle shadows */
   #yes, #no {
-    padding: 10px 25px;
-    font-size: 1rem;
+    width: 100%;
+    padding: 14px 0;              /* taller buttons for easy touch */
+    font-size: 1.1rem;
+    border-radius: 50px;          /* pill-style buttons */
+    transition: all 0.3s ease;    /* smooth hover/tap animations */
+    box-shadow: 0 6px 20px rgba(255, 0, 128, 0.3);
+  }
+
+  /* YES button: gradient hover effect */
+  #yes:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(255, 0, 128, 0.5);
+  }
+
+  /* NO button: subtle opacity effect on hover */
+  #no:hover {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
+
 /* ===== ANIMATION FOR HEART RAIN ===== */
 .heart {
   position: fixed;
