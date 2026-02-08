@@ -3,7 +3,7 @@ const yesBtn = document.getElementById("yes");
 
 const container = document.querySelector(".buttons");
 
-noBtn.addEventListener("mouseover", () => {
+function moveNoButton() {
   const maxX = container.clientWidth - noBtn.offsetWidth;
   const maxY = container.clientHeight - noBtn.offsetHeight;
 
@@ -12,15 +12,18 @@ noBtn.addEventListener("mouseover", () => {
 
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
-});
-
+}
 
 noBtn.addEventListener("mouseover", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton);
 
 yesBtn.addEventListener("click", () => {
+   const music=document.getElementById("loveMusic");
+  music.play();
+  
   document.querySelector("h1").style.display = "none";
   document.querySelector(".buttons").style.display = "none";
+ 
 
   const message = document.createElement("div");
   message.innerHTML = "I love you 💖";
