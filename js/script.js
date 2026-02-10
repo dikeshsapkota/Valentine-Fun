@@ -1,7 +1,4 @@
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
-
-const container = document.querySelector(".buttons");
+import { noBtn, yesBtn, container, music } from "./elements.js";
 
 function moveNoButton() {
   const maxX = container.clientWidth - noBtn.offsetWidth;
@@ -16,16 +13,16 @@ function moveNoButton() {
 
 noBtn.addEventListener("mouseover", moveNoButton);
 noBtn.addEventListener("touchstart", moveNoButton);
-
+//music playing
 yesBtn.addEventListener("click", () => {
-   const music=document.getElementById("loveMusic");
+
   music.play();
   startHeartRain();
 
-  
+
   document.querySelector("h1").style.display = "none";
   document.querySelector(".buttons").style.display = "none";
- 
+
 
   const message = document.createElement("div");
   message.innerHTML = "I love you 💖";
@@ -44,7 +41,7 @@ yesBtn.addEventListener("click", () => {
   document.body.appendChild(message);
 });
 //HEART RAIN
-    const baseHeart=document.querySelector(".heart");
+const baseHeart = document.querySelector(".heart");
 function startHeartRain() {
   const interval = setInterval(() => {
     const heart = baseHeart.cloneNode(true);
